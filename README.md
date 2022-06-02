@@ -56,7 +56,8 @@ python run.py --configs configs/pose_estimation/pose_estimation.py
 
 ## 相关链接
 
+- [MMPose Webcam API 教程](https://github.com/open-mmlab/mmpose/blob/master/docs/zh_cn/tutorials/7_webcam_api.md)
+- [MMPose Webcam API 文档](https://mmpose.readthedocs.io/en/latest/api.html#mmpose-apis-webcam)
 - [MMPose 代码仓库](https://github.com/open-mmlab/mmpose)
 - [MMPose 官方文档](https://mmpose.readthedocs.io/en/latest/)
-- [MMPose Webcam API 文档](https://mmpose.readthedocs.io/en/latest/api.html#mmpose-apis-webcam)
 - [MMPose Model Zoo](https://mmpose.readthedocs.io/en/v0.26.0/modelzoo.html)
