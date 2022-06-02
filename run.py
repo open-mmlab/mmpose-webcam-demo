@@ -15,7 +15,7 @@ def parse_args():
     parser = ArgumentParser('Webcam executor configs')
     parser.add_argument('--config',
                         type=str,
-                        default='demo/webcam_cfg/pose_estimation.py')
+                        default='configs/pose_estimation/pose_estimation.py')
 
     parser.add_argument(
         '--cfg-options',
