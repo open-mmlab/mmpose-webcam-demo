@@ -1,6 +1,8 @@
 # mmpose-webcam-demo
 
-A template to build demos and applications with MMPose Webcam API
+简体中文 | [English](/README_en.md)
+
+基于 MMPose Webcam API 开发应用或 demo 的项目模板
 
 <div align="center">
     <img src="https://user-images.githubusercontent.com/15977946/171618680-49968673-6f11-4b9d-b63e-72543e8a75a0.gif">
@@ -56,8 +58,13 @@ python run.py --configs configs/pose_estimation/pose_estimation.py
 
 ## 相关链接
 
-- [MMPose Webcam API 教程](https://mmpose.readthedocs.io/zh_CN/latest/tutorials/7_webcam_api.html)
-- [MMPose Webcam API 文档](https://mmpose.readthedocs.io/zh_CN/latest/api.html#mmpose-apis-webcam)
-- [MMPose 代码仓库](https://github.com/open-mmlab/mmpose)
-- [MMPose 官方文档](https://mmpose.readthedocs.io/zh_CN/latest/)
-- [MMPose Model Zoo](https://mmpose.readthedocs.io/zh_CN/latest/modelzoo.html)
+- 关于摄像头应用接口（MMPose Webcam API）
+  - [教程文档](https://mmpose.readthedocs.io/zh_CN/latest/tutorials/7_webcam_api.html)
+  - [API 查询](https://mmpose.readthedocs.io/zh_CN/latest/api.html#mmpose-apis-webcam)
+- 关于 MMPose
+  - [代码仓库](https://github.com/open-mmlab/mmpose)
+  - [使用文档](https://mmpose.readthedocs.io/zh_CN/latest/)
+  - [模型池](https://mmpose.readthedocs.io/zh_CN/latest/modelzoo.html)
+- 关于 “万物生姿” MMPose 姿态估计创意 Demo 大赛
+  - [活动主页](https://openmmlab.com/community/mmpose-demo)
+  - [作品提交](https://github.com/open-mmlab/mmpose/issues/1407)
