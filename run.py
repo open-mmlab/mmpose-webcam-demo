@@ -8,7 +8,7 @@ from mmcv import Config, DictAction
 from mmpose.apis.webcam import WebcamExecutor
 
 sys.path.append('.')
-from webcam_demo import *  # noqa
+from src import *  # noqa
 
 
 def parse_args():
