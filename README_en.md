@@ -53,7 +53,7 @@ pre-commit install
 ## Run the Demo
 
 ```shell
-python run.py --configs configs/pose_estimation/pose_estimation.py
+python run.py --config configs/pose_estimation/pose_estimation.py
 ```
 
 ## Useful Linnks
