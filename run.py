@@ -6,6 +6,7 @@ from argparse import ArgumentParser
 
 from mmcv import Config, DictAction
 from mmpose.apis.webcam import WebcamExecutor
+from mmpose.apis.webcam.nodes import model_nodes
 
 sys.path.append('.')
 from src import *  # noqa
@@ -13,9 +14,10 @@ from src import *  # noqa
 
 def parse_args():
     parser = ArgumentParser('Webcam executor configs')
-    parser.add_argument('--config',
-                        type=str,
-                        default='configs/pose_estimation/pose_estimation.py')
+    parser.add_argument(
+        '--config',
+        type=str,
+        default='configs/examples/pose_estimation/pose_estimation.py')
 
     parser.add_argument(
         '--cfg-options',
@@ -29,7 +31,32 @@ def parse_args():
                         action='store_true',
                         help='Show debug information')
 
+    parser.add_argument('--cpu',
+                        action='store_true',
+                        help='Use CPU for model inference.')
+    parser.add_argument('--cuda',
+                        action='store_true',
+                        help='Use GPU for model inference.')
+
     return parser.parse_args()
+
+
+def set_device(cfg: Config, device: str):
+    """Set model device in config.
+
+    Args:
+        cfg (Config): Webcam config
+        device (str): device indicator like "cpu" or "cuda:0"
+    """
+
+    device = device.lower()
+    assert device == 'cpu' or device.startswith('cuda:')
+
+    for node_cfg in cfg.executor_cfg.nodes:
+        if node_cfg.type in model_nodes.__all__:
+            node_cfg.update(device=device)
+
+    return cfg
 
 
 def run():
@@ -38,8 +65,13 @@ def run():
     cfg.merge_from_dict(args.cfg_options)
 
     if args.debug:
-        logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)
+        logging.basicConfig(level=logging.DEBUG)
+
+    if args.cpu:
+        cfg = set_device(cfg, 'cpu')
+
+    if args.cuda:
+        cfg = set_device(cfg, 'cuda:0')
 
     webcam_exe = WebcamExecutor(**cfg.executor_cfg)
     webcam_exe.run()

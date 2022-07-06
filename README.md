@@ -53,7 +53,14 @@ pre-commit install
 ## 运行示例
 
 ```shell
+# use GPU
 python run.py --config configs/pose_estimation/pose_estimation.py
+
+# use CPU
+python run.py --config configs/pose_estimation/pose_estimation.py --cpu
+
+# use debug mode
+python run.py --config configs/pose_estimation/pose_estimation.py --debug
 ```
 
 ## 相关链接
